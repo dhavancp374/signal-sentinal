@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Sentinel Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        #main-container {
+            display: flex;
+        }
+        #sidebar {
+            width: 20%;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        #content {
+            width: 80%;
+            padding: 20px;
+        }
+        .content-section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Signal Sentinel</h1>
+</header>
+<div id="main-container">
+    <div id="sidebar">
+        <h1>Menu</h1>
+        <nav>
+            <a href="#" id="dashboard-link">Dashboard</a>
+            <a href="#" id="map-link">Map</a>
+            <a href="#" id="alerts-link">Alerts</a>
+        </nav>
+    </div>
+    <div id="content">
+        <div id="dashboard-content" class="content-section active">
+            <h3>Real-Time Data</h3>
+            <div class="dashboard-data">
+                <div class="data-item">
+                    <h3>Latitude</h3>
+                    <p id="latitude">--</p>
+                </div>
+                <div class="data-item">
+                    <h3>Longitude</h3>
+                    <p id="longitude">--</p>
+                </div>
+                <div class="data-item">
+                    <h3>Speed (km/h)</h3>
+                    <p id="speed">--</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-item">
+                    <h3>Speed Chart</h3>
+                    <canvas id="speedChart"></canvas>
+                </div>
+                <div class="chart-item">
+                    <h3>Event Chart</h3>
+                    <canvas id="eventChart" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+        <div id="map">
+            
+        </div>
+        <div id="alerts-content" class="content-section">
+            <h3>Alerts</h3>
+            <div id="alerts"></div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 Signal Sentinel</p>
+</footer>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="/static/index.js"></script>
+</body>
+</html>
